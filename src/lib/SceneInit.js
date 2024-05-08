@@ -17,26 +17,27 @@ export default class SceneInit {
     }
 
     initialize() {
-        this.scene = THREE.Scene();
+        this.scene = new THREE.Scene();
 
         this.camera = new THREE.PerspectiveCamera(
-            45,
+            120,
             window.innerWidth / window.innerHeight,
-            1,
+            0.001,
             1000
         );
-        this.camera.position.z = 10;
+        this.camera.position.z = 0;
 
         const canvas = document.getElementById(this.canvasID);
         this.renderer = new THREE.WebGLRenderer({canvas});
 
         this.ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
+
     }
 
-    /*
-        the article i took this from had something for animation here but I
-        don't intend to use animations so I'm leaving it out
-    */
+    animate() {
+        window.requestAnimationFrame(this.animate.bind(this));
+        this.render();
+      }
 
     render() {
         this.renderer.render(this.scene, this.camera);
