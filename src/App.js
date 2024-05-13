@@ -17,7 +17,7 @@ function App() {
     scene.scene.add(boxMesh); */
 
     const gltfLoader = new GLTFLoader();
-    gltfLoader.load(`${process.env.PUBLIC_URL}/models/tracheostomy_tube_cleaned.gltf`,(gltfScene) =>{
+    gltfLoader.load(`${process.env.PUBLIC_URL}/models/tracheostomy_tube_cleaned.glb`,(gltfScene) =>{
       scene.scene.add(gltfScene.scene);
     })
   }, []);
