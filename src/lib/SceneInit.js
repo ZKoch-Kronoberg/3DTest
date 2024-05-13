@@ -50,7 +50,7 @@ export default class SceneInit {
         document.body.appendChild(this.stats.dom); //not sure what is wrong with this line
 
         //ambient light, lights whole scene evenly
-        this.ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
+        this.ambientLight = new THREE.AmbientLight(0xffffff, 1);
         this.scene.add(this.ambientLight);
 
         window.addEventListener('resize', () => this.OnWindowResize(), false)
