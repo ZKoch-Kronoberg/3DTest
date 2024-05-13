@@ -5,7 +5,13 @@ import Viewer from './Viewer';
 function App() {
 
   return (
-    <Viewer/>
+    <>
+      <h1 className='text-3xl font-bold underline'>
+        3D-Test!
+      </h1>
+      <Viewer/>
+    </>
+    
   );
 }
 

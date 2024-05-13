@@ -47,7 +47,7 @@ export default class SceneInit {
         this.clock = new THREE.Clock();
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
         this.stats = Stats();
-        document.body.appendChild(this.stats.dom); //not sure what is wrong with this line
+        //document.body.appendChild(this.stats.dom); //not sure what is wrong with this line
 
         //ambient light, lights whole scene evenly
         this.ambientLight = new THREE.AmbientLight(0xffffff, 1);
