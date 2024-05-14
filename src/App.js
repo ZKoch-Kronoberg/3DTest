@@ -33,7 +33,9 @@ function App() {
             Placera muspekaren innanför visningsområdet. 3D-visaren kommer
             annars inte kunna uppfatta dina gester.
           </li>
-
+          <li>
+            vänsterklicka och dra för att rotera vyn runt modellen, högerklicka och dra för att panorera vyn och skrolla upp och ned för att zooma in och ut.
+          </li>
         </ol>
         <Viewer/>
       </main>
