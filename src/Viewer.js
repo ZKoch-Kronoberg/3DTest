@@ -21,9 +21,7 @@ function Viewer() {
   }, []);
   
   return (
-    <div>
-      <canvas id='c'/>
-    </div>
+    <canvas id='c' className='w-5/6 mx-auto'/>
   );
 }
 
