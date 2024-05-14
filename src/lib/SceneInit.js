@@ -41,19 +41,15 @@ export default class SceneInit {
             canvas,
             antialias: true
         });
-        this.renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(this.renderer.domElement);
 
         this.clock = new THREE.Clock();
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
         this.stats = Stats();
-        //document.body.appendChild(this.stats.dom); //not sure what is wrong with this line
+        //document.body.appendChild(this.stats.dom);
 
         //ambient light, lights whole scene evenly
         this.ambientLight = new THREE.AmbientLight(0xffffff, 1);
         this.scene.add(this.ambientLight);
-
-        window.addEventListener('resize', () => this.OnWindowResize(), false)
     }
 
     animate() {
@@ -64,12 +60,26 @@ export default class SceneInit {
       }
 
     render() {
+        if (this.resizeRendererToDisplaysize(this.renderer)){
+          const canvas = this.renderer.domElement;
+            this.camera.aspect = canvas.clientWidth / canvas.clientHeight;
+            this.camera.updateProjectionMatrix();  
+        }
+        
+        
         this.renderer.render(this.scene, this.camera);
     };
 
-    OnWindowResize() {
-        this.camera.aspect = window.innerWidth / window.innerHeight;
-        this.camera.updateProjectionMatrix();
-        this.renderer.setSize(window.innerWidth, window.innerHeight);
-    }
+    resizeRendererToDisplaysize(renderer){
+        const canvas = renderer.domElement;
+        const width = canvas.clientWidth;
+        const height = canvas.clientHeight;
+
+        const needResize = canvas.width !== width || canvas.height !== height;
+        if (needResize){
+            renderer.setSize(width, height, false);
+        }
+
+        return needResize;
+    };
 }
