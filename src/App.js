@@ -1,15 +1,15 @@
 import './App.css';
 import Viewer from './Viewer';
+import logo from './logo.svg'
 
 
 function App() {
 
   return (
     <>
-      <header className="bg-gradient-to-r from-krono-lime via-krono-green to-krono-pink py-4">
-        <div>
-          <h1 className="text-white text-3xl font-bold text-left">3D-Test</h1>
-        </div>
+      <header className="bg-gradient-to-r from-krono-lime via-krono-green to-krono-pink py-4 flex flex-row items-center">
+        <img src={`${process.env.PUBLIC_URL}/region-kronoberg_logo_vit.svg`} className='h-12 mx-6'></img>
+        <h1 className="text-white text-3xl font-bold text-left">3D-Test</h1>
       </header>
       <main className="mt-2 px-2 w-full">
         <h2 className='text-2xl mt-2'>
