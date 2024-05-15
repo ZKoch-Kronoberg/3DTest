@@ -11,7 +11,7 @@ function App() {
         <img src={`${process.env.PUBLIC_URL}/region-kronoberg_logo_vit.svg`} className='h-12 mx-6'></img>
         <h1 className="text-white text-3xl font-bold text-left">3D-Test</h1>
       </header>
-      <main className="mt-2 px-2 w-full">
+      <main className="mt-2 px-4 w-full min-h-screen">
         <h2 className='text-2xl mt-2'>
           Om denna sidan
         </h2>
@@ -39,6 +39,9 @@ function App() {
         </ol>
         <Viewer/>
       </main>
+      <footer className='bg-gradient-to-r from-krono-lime via-krono-green to-krono-pink text-white'>
+        Test
+      </footer>
     </>
   );
 }
