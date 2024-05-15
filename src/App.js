@@ -1,6 +1,5 @@
 import './App.css';
 import Viewer from './Viewer';
-import logo from './logo.svg'
 
 
 function App() {
@@ -8,7 +7,7 @@ function App() {
   return (
     <>
       <header className="bg-gradient-to-r from-krono-lime via-krono-green to-krono-pink py-4 flex flex-row items-center">
-        <img src={`${process.env.PUBLIC_URL}/region-kronoberg_logo_vit.svg`} className='h-12 mx-6'></img>
+        <img src={`${process.env.PUBLIC_URL}/region-kronoberg_logo_vit.svg`} className='h-12 mx-4' alt='Region Kronobergs logotyp'></img>
         <h1 className="text-white text-3xl font-bold text-left">3D-Test</h1>
       </header>
       <main className="mt-2 px-4 w-full min-h-screen">
@@ -34,7 +33,7 @@ function App() {
             annars inte kunna uppfatta dina gester.
           </li>
           <li>
-            vänsterklicka och dra för att rotera vyn runt modellen, högerklicka och dra för att panorera vyn och skrolla upp och ned för att zooma in och ut.
+            Vänsterklicka och dra för att rotera vyn runt modellen, högerklicka och dra för att panorera vyn och skrolla upp och ned för att zooma in och ut.
           </li>
         </ol>
         <Viewer/>
