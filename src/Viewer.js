@@ -4,7 +4,7 @@ import { GLTFLoader } from 'three/examples/jsm/Addons.js';
 
 function Viewer() {
   useEffect(() => {
-    const scene = new SceneInit('c');
+    const scene = new SceneInit('viewerCanvas', 'viewerAnnotation');
     scene.initialize();
     scene.animate();
 
@@ -21,7 +21,10 @@ function Viewer() {
   }, []);
   
   return (
-    <canvas id='c' className='w-5/6 mx-auto'/>
+    <div className='relative'>
+      <div id='viewerAnnotation' className='absolute text-white bg-krono-lime p2'>Annotation</div>
+      <canvas id='viewerCanvas' className='w-full mx-auto my-4'/>
+    </div>
   );
 }
 

@@ -7,7 +7,7 @@ import { OrbitControls } from 'three/examples/jsm/Addons.js';
 import Stats from 'three/examples/jsm/libs/stats.module';
 
 export default class SceneInit {
-    constructor(canvasID) {
+    constructor(canvasID, annotationID) {
         this.scene = undefined;
         this.camera = undefined;
         this.renderer = undefined;
@@ -22,6 +22,9 @@ export default class SceneInit {
         this.controls = undefined;
 
         this.ambientLight = undefined;
+
+        this.annotationID = annotationID;
+        this.showAnnotations = false;
     }
 
     initialize() {
@@ -57,6 +60,7 @@ export default class SceneInit {
         this.render();
         this.stats.update();
         this.controls.update();
+        this.annotate();
       }
 
     render() {
@@ -82,4 +86,19 @@ export default class SceneInit {
 
         return needResize;
     };
+
+    annotate(){
+        const vector = new THREE.Vector3(0.1, 0.1, 0.1);
+        const canvas = this.renderer.domElement;
+
+        vector.project(this.camera);
+
+        vector.x = Math.round((0.5 + vector.x / 2) * (canvas.width / window.devicePixelRatio));
+        vector.y = Math.round((0.5 - vector.y / 2) * (canvas.height / window.devicePixelRatio));
+
+        const annotation = document.getElementById(this.annotationID);
+        annotation.style.top = `${vector.y}px`;
+        annotation.style.left = `${vector.x}px`;
+
+    }
 }
