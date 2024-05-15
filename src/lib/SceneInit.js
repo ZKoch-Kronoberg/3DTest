@@ -66,7 +66,8 @@ export default class SceneInit {
     render() {
         if (this.resizeRendererToDisplaysize(this.renderer)){
           const canvas = this.renderer.domElement;
-            this.camera.aspect = canvas.clientWidth / canvas.clientHeight;
+          this.renderer.setPixelRatio(window.devicePixelRatio);  
+          this.camera.aspect = canvas.clientWidth / canvas.clientHeight;
             this.camera.updateProjectionMatrix();  
         }
         
