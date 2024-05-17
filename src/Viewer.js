@@ -41,8 +41,7 @@ function Viewer() {
   const [selectedAnnotationIndex, setSelectedAnnotationIndex] = useState(0);
   const [annotations, setAnnotations] = useState([{
     title: 'Inga annoteringar laddade',
-    text: `visaren har inte hunnit hämta annoteringsdata för denna modellen än
-           eller så finns det ingen`,
+    text: `Antingen så har 3D-visaren inte hunnit hämta annoteringarna än, eller så har modellen inga`,
     location: {
       x: 0,
       y: 0,
@@ -102,7 +101,14 @@ function Viewer() {
     });
 
     //load annotation data, should probably also be asynchronous
-    setAnnotations(testAnnotations);
+    //setAnnotations(testAnnotations);
+    const loadedAnnotations = fetch(`${process.env.PUBLIC_URL}/models/annotations.json`)
+      .then((fetchedData) => fetchedData.json())
+      .then((data) =>{
+        setAnnotations(data);
+        console.log(data);
+      })
+    
   }, []);
   
   return (
