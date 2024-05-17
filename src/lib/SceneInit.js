@@ -25,6 +25,7 @@ export default class SceneInit {
 
         this.annotationID = annotationID;
         this.showAnnotations = false;
+        this.annotationPosition = undefined;
     }
 
     initialize() {
@@ -89,7 +90,11 @@ export default class SceneInit {
     };
 
     annotate(){
-        const vector = new THREE.Vector3(0.1, 0.1, 0.1);
+        const vector = new THREE.Vector3(
+            this.annotationPosition?.x,
+            this.annotationPosition?.y,
+            this.annotationPosition?.z
+        );
         const canvas = this.renderer.domElement;
 
         vector.project(this.camera);
@@ -101,5 +106,5 @@ export default class SceneInit {
         annotation.style.top = `${vector.y}px`;
         annotation.style.left = `${vector.x}px`;
 
-    }
+    };
 }
