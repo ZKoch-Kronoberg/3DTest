@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Ballonguppblåsningsventil",
+        "text": "Denna ventilen leder till en ballong i slutet på andningstuben. Sprutan används som pump.",
+        "location": {
+            "x": 0.015889,
+            "y": 0.036957,
+            "z": 0.029503
+        }
+    },
+    {
+        "title": "Andningsslang",
+        "text": "Denna Slangen förs ned i patiensens strupe, vilken de sedan andas genom. Ballongen i änden av slangen (som på denna modellen är uppblåst) pumpas därefter upp så att slangen stannar där den ska",
+        "location": {
+            "x": 0.00559,
+            "y": 0.09312,
+            "z": -0.026001
+        }
+    },
+    {
+        "title": "Band",
+        "text": "Bandet sätts runt patientens hals och hjälper med att hålla apparaten på plats.",
+        "location": {
+            "x": 0.015619,
+            "y": 0.030847,
+            "z": -0.035837
+        }
+    },
+    {
+        "title": "Filter",
+        "text": "Filter som patienten andas genom.",
+        "location": {
+            "x": -0.014249,
+            "y": 0.13242,
+            "z": 0.026059
+        }
+    }
+]
