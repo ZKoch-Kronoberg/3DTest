@@ -39,7 +39,7 @@ function App() {
         <Viewer/>
       </main>
       <footer className='bg-gradient-to-r from-krono-lime via-krono-green to-krono-pink text-white'>
-        Test
+        <a href='https://github.com/ZKoch-Kronoberg/3DTest/blob/main/NOTICE.txt'>3rd party copyright notices</a>
       </footer>
     </>
   );
