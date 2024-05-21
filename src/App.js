@@ -37,8 +37,9 @@ function App() {
         </ol>
         <Viewer/>
       </main>
-      <footer className='bg-sky-600 text-white'>
+      <footer className='bg-sky-600 text-white flex flex-row gap-x-2'>
         <a href='https://github.com/ZKoch-Kronoberg/3DTest/blob/main/NOTICE.txt'>3rd party copyright notices</a>
+        <a href='https://github.com/ZKoch-Kronoberg/3DTest/blob/main/LICENSE.txt'>License</a>
       </footer>
     </>
   );
