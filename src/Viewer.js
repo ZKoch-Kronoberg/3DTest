@@ -119,15 +119,15 @@ function Viewer() {
       <canvas id='viewerCanvas' className='w-full mx-auto my-4'/>
       <div className='flex flex-col gap-y-2 sm:flex-row sm:justify-start sm:gap-x-2  mx-auto'>
         <button onClick={() => setShowAnnotation(!showAnnotation)}
-          className='bg-krono-lime text-white rounded-full p-1 text-lg'>
+          className='bg-sky-600 text-white rounded-full p-1 text-lg'>
           {showAnnotation ? 'Göm Annoteringar' : 'Visa Annoteringar'}
         </button>
         <button onClick={decrementSelectedAnnnotationIndex}
-          className='bg-krono-lime text-white rounded-full p-1 text-lg'>
+          className='bg-sky-600 text-white rounded-full p-1 text-lg'>
           Tidigare Annotering
         </button>
         <button onClick={incrementSelectedAnnotation}
-          className='bg-krono-lime text-white rounded-full p-1 text-lg'>
+          className='bg-sky-600 text-white rounded-full p-1 text-lg'>
           Nästa Annotering
         </button>
       </div>
